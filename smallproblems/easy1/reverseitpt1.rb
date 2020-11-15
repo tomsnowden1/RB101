@@ -1,4 +1,5 @@
 def reverse_sentence(poop)
+  poop.split.reverse.join(" ")
 end
 
 puts reverse_sentence('') == ''

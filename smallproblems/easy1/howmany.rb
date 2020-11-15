@@ -1,15 +1,20 @@
-def count_occurrences(xyz)
-  xyz.map do |x|
-      
+def count_occurrences(poop)
+  sym = poop.uniq.each do |x|
+    x.to_sym
   end
-end
+  poop.each do |x| 
+    if x == 
+  puts sym
+end 
+
 
 vehicles = [
   'car', 'car', 'truck', 'car', 'SUV', 'truck',
   'motorcycle', 'motorcycle', 'car', 'truck'
 ]
 
-count_occurrences(vehicles)
+
+ count_occurrences(vehicles)
 
 =begin
 car => 4

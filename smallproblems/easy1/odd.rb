@@ -1,14 +1,6 @@
-def is_odd?(xy)
-  if xy % 2 > 0
-    return true
-  elsif
-    xy == 0
-     return false
-   else
-     return false
-  end
+def is_odd?(num)
+   num % 2 > 0? true : false
 end
-
 puts is_odd?(2)    # => false
 puts is_odd?(5)    # => true
 puts is_odd?(-17)  # => true
