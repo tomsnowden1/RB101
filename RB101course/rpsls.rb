@@ -76,38 +76,54 @@ end
 play_or_read
 
 loop do
-  choice = ''
-  
-    
   loop do
-    prompt "Choose one: Rock[r], Paper[p], Scissors[s], Lizard[l], Spock[sp]"
-
-    choice = gets.chomp.downcase
-    break if VALID_CHOICES.include?(choice)
-    prompt "That's not a valid choice"
+    choice = ''
+    
+      
+    loop do
+      prompt "Choose one: Rock[r], Paper[p], Scissors[s], Lizard[l], Spock[sp]"
+  
+      choice = gets.chomp.downcase
+      break if VALID_CHOICES.include?(choice)
+      prompt "That's not a valid choice"
+    end
+  
+    computer_choice = VALID_CHOICES.sample
+    
+    display_result(choice, computer_choice)
+    prompt("You chose #{choice}, computer chose #{computer_choice}")
+    
+    if win?(choice, computer_choice)
+       score['Player'] +=1
+       puts "You are on #{score['Player']}, Computer is on #{score['Computer']}"
+    elsif win?(computer_choice, choice)
+        score["Computer"] +=1
+        puts "You are on #{score['Player']}, Computer is on #{score['Computer']}"
+    else
+     puts "No points given"
+   end
+  
+   if score['Player'] == 5 
+     puts "You are the winner, you beat that shitty computer"
+     break
+   elsif
+     score["Computer"] == 5
+        puts "The computer won, you suck"
+      break
+    else
+    end
   end
-
-  computer_choice = VALID_CHOICES.sample
   
-  display_result(choice, computer_choice)
-  prompt("You chose #{choice}, computer chose #{computer_choice}")
-  
-  if win?(choice, computer_choice)
-     score['Player'] +=1
-     puts "You are on #{score['Player']}, Computer is on #{score['Computer']}"
-     elsif win?(computer_choice, choice)
-      score["Computer"] +=1
-      puts "You are on #{score['Player']}, Computer is on #{score['Computer']}"
- else
-   puts "No points given"
- end
-  
-
-  
-  
-  prompt('Would you like to play again? [Enter Y or N]')
-  play_again = gets.chomp.downcase
-  break if play_again == 'n'
+   prompt('Would you like to play again? [Enter Y or N]')
+    play_again = gets.chomp.downcase
+    score['Player'] = 0
+     score["Computer"] = 0
+    break if play_again == 'n'
 end
 
+
 prompt('Cheers for playing gang.')
+
+=begin
+
+=end
